@@ -34,14 +34,15 @@ main {
   z-index: 5;
   padding: 10px;
 }
-button {
+button, input {
   background-color: Transparent;
   outline: 0;
   color: #fffa7c;
+  margin: 15px;
+  margin-left: 0;
 }
 #play-pause {
   font-size: 50px;
-  margin-bottom: 10px;
   border: 0;
 }
 .textB {
@@ -50,12 +51,12 @@ button {
   border-width: 3px;
   border-radius: 50px;
   border-color: #fffa7c;
-  margin: 10px;
-  margin-left: 0;
 }
 #fps {
   white-space: pre;
   color: white;
+  display: none;
+  font-size: 15px;
 }
 input[type=range] {
   -webkit-appearance: none;

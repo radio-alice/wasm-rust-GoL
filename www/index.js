@@ -208,11 +208,14 @@ cSlider.addEventListener("mouseup", event => {
 
 //show and hide fps stats
 const showFps = document.getElementById("showFps");
+var fpsDisplay = false;
 showFps.addEventListener("click", event => {
-  if (fps.fps.style.display = "none") {
-    fps.fps.style.display = "block";
-  } else {
+  if (fpsDisplay) {
     fps.fps.style.display = "none";
+    fpsDisplay = false;
+  } else {
+    fps.fps.style.display = "inline";
+    fpsDisplay = true;
   }
 });
 
