@@ -171,6 +171,10 @@ canvas.addEventListener("click", event => {
 
   if (event.metaKey){
     universe.add_glider(row, col);
+  } else if (event.shiftKey) {
+    universe.add_pulsar(row, col);
+  } else if (event.altKey) {
+    universe.add_gun(row, col);
   } else {
     universe.toggle_cell(row, col);
   }
@@ -216,6 +220,16 @@ showFps.addEventListener("click", event => {
   } else {
     fps.fps.style.display = "inline";
     fpsDisplay = true;
+  }
+});
+
+const showIns = document.getElementById("showIns");
+const instructions = document.getElementById("instructions")
+showIns.addEventListener("click", event => {
+  if (instructions.style.display !== "none") {
+    instructions.style.display = "none";
+  } else {
+    instructions.style.display = "block";
   }
 });
 

@@ -16,8 +16,16 @@
         <label for="FrameLength">Frame Length</label>
         <input type="range" name="CellSize" id="cslider" min="3" max="100" value="20">
         <label for="CellSize">Cell Size</label>
+        <button id="showIns" class="textB">show instructions</button>
         <button id="showFps" class="textB">show stats</button>
         <div id="fps"></div>
+      </div>
+      <div id="instructions">
+        <pre>
+cmd/ctrl + click for glider
+shift + click for pulsar
+alt + click for glider gun
+        </pre>
       </div>
     </main>
     <script src="./bootstrap.js"></script>

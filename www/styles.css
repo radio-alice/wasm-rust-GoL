@@ -34,12 +34,32 @@ main {
   z-index: 5;
   padding: 10px;
 }
+#instructions {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  background-color: Transparent;
+  border: 0;
+  outline: 0;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-family: monospace;
+  border-width: 3px;
+  border-style: dashed;
+  border-color: white;
+  z-index: 5;
+}
 button, input {
   background-color: Transparent;
   outline: 0;
   color: #fffa7c;
   margin: 15px;
   margin-left: 0;
+  border-radius: 50px;
+}
+pre {
+  margin: 10px;
 }
 #play-pause {
   font-size: 50px;
@@ -49,7 +69,6 @@ button, input {
   font-size: 20px;
   font-family: monospace;
   border-width: 3px;
-  border-radius: 50px;
   border-color: #fffa7c;
 }
 #fps {

@@ -198,7 +198,82 @@ impl Universe {
            }
        }
    }
+    // pulsar:
+    // ..OOO...OOO..
+	// .............
+	// O....O.O....O
+	// O....O.O....O
+	// O....O.O....O
+	// ..OOO...OOO..
+	// .............
+	// ..OOO...OOO..
+	// O....O.O....O
+	// O....O.O....O
+	// O....O.O....O
+	// .............
+	// ..OOO...OOO..
+   pub fn add_pulsar(&mut self, row: u32, column: u32) {
+       let down = self.height - 6;
+       let left = self.width - 6;
+       for delta_row in down..(down + 13) {
+           for delta_col in left..(left + 13) {
+               let (r, c) = (delta_row - down, delta_col - left);
+               let neighbor_row = (row + delta_row) % self.height;
+               let neighbor_col = (column + delta_col) % self.width;
+               let idx = self.get_index(neighbor_row, neighbor_col);
 
+               match r {
+                   0 | 5 | 7 | 12 => {
+                       match c {
+                           2 | 3 | 4 | 8 | 9 | 10 => self.cells[idx].activate(),
+                           _ => (),
+                       }
+                   }
+                   2 | 3 | 4 | 8 | 9 | 10 => {
+                       match c {
+                           0 | 5 | 7 | 12 => self.cells[idx].activate(),
+                           _ => (),
+                       }
+                   }
+                   _ => (),
+               }
+           }
+       }
+   }
+
+    // add gosper's glider gun:
+    // ........................O...........
+	// ......................O.O...........
+	// ............OO......OO............OO
+	// ...........O...O....OO............OO
+	// OO........O.....O...OO..............
+	// OO........O...O.OO....O.O...........
+	// ..........O.....O.......O...........
+	// ...........O...O....................
+	// ............OO......................
+    pub fn add_gun(&mut self, row: u32, column: u32) {
+        let down = self.height - 4;
+        let left = self.width - 18;
+        for delta_row in down..(down + 9) {
+            for delta_col in left..(left + 36) {
+                let (r, c) = (delta_row - down, delta_col - left);
+                let neighbor_row = (row + delta_row) % self.height;
+                let neighbor_col = (column + delta_col) % self.width;
+                let idx = self.get_index(neighbor_row, neighbor_col);
+
+                match (r,c) {
+                    (0,24) | (1,22) | (1,24) | (2,12) | (2,13) | (2,20) | (2,21) |
+                    (2,34) | (2,35) | (3,11) | (3,15) | (3,20) | (3,21) | (3,34) |
+                    (3,35) | (4,0) | (4,1) | (4,10) | (4,16) | (4,20) | (4,21) | (5,0) |
+                    (5,1) | (5,10) | (5, 14) | (5,16) | (5,17) | (5,22) | (5,24) |
+                    (6,10) | (6,16) | (6,24) | (7,11) | (7,15) | (8,12) | (8,13) => {
+                        self.cells[idx].activate()
+                    },
+                    _ => (),
+                }
+            }
+        }
+    }
    pub fn clear(&mut self) {
        self.cells = (0..self.width * self.height).map(|_i| Cell::Dead).collect();
    }
