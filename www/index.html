@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>beep boop boys</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+      <canvas id="game-of-life-canvas"></canvas>
+      <div class="controls">
+        <button id="play-pause"></button>
+        <button id="randomize" class="textB">randomize</button>
+        <button id="clear" class="textB">clear</button>
+        <input type="range" name="FrameLength" id="fslider" min="1" max="60" value="10">
+        <label for="FrameLength">Frame Length</label>
+        <input type="range" name="CellSize" id="cslider" min="3" max="100" value="20">
+        <label for="CellSize">Cell Size</label>
+        <button id="showFps" class="textB">show stats</button>
+        <div id="fps"></div>
+      </div>
+    </main>
+    <script src="./bootstrap.js"></script>
+  </body>
+</html>
