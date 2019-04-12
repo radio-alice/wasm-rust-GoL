@@ -215,9 +215,11 @@ const showFps = document.getElementById("showFps");
 var fpsDisplay = false;
 showFps.addEventListener("click", event => {
   if (fpsDisplay) {
+    showFps.textContent = "show fps stats";
     fps.fps.style.display = "none";
     fpsDisplay = false;
   } else {
+    showFps.textContent = "hide fps stats";
     fps.fps.style.display = "inline";
     fpsDisplay = true;
   }
@@ -228,8 +230,10 @@ const instructions = document.getElementById("instructions")
 showIns.addEventListener("click", event => {
   if (instructions.style.display !== "none") {
     instructions.style.display = "none";
+    showIns.textContent = "show instructions";
   } else {
     instructions.style.display = "block";
+    showIns.textContent = "hide instructions";
   }
 });
 
