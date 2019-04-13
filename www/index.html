@@ -12,20 +12,18 @@
         <button id="play-pause"></button>
         <button id="randomize" class="textB">randomize</button>
         <button id="clear" class="textB">clear</button>
-        <input type="range" name="FrameLength" id="fslider" min="1" max="60" value="10">
+        <input type="range" name="FrameLength" id="fslider" min="1" max="30" value="10">
         <label for="FrameLength">Frame Length</label>
-        <input type="range" name="CellSize" id="cslider" min="3" max="100" value="20">
+        <input type="range" name="CellSize" id="cslider" min="3" max="35" value="20">
         <label for="CellSize">Cell Size</label>
         <button id="showIns" class="textB">hide instructions</button>
         <button id="showFps" class="textB">show fps stats</button>
         <div id="fps"></div>
       </div>
       <div id="instructions">
-        <pre>
-cmd/ctrl + click for glider
+        <pre>cmd/ctrl + click for glider
 shift + click for pulsar
-alt + click for glider gun
-        </pre>
+alt + click for glider gun</pre>
       </div>
     </main>
     <script src="./bootstrap.js"></script>

@@ -3,8 +3,8 @@ import { memory } from "wasm-game-of-life/wasm_game_of_life_bg";
 
 var FRAME_LENGTH = 10;
 var CELL_SIZE = 20; //px
-const ALIVE_COLOR = "#f319ff";
-const DEAD_COLOR = "#0006c4";
+const ALIVE_COLOR = "#98DFEA";
+const DEAD_COLOR = "#25283D";
 
 var universe;
 var canvas = document.getElementById('game-of-life-canvas');
@@ -15,8 +15,8 @@ var height;
 
 //set up canvas, randomized universe
 function init(){
-  width = Math.floor((window.innerWidth - 100) / CELL_SIZE);
-  height = Math.floor((window.innerHeight - 100) / CELL_SIZE);
+  width = Math.floor((window.innerWidth) / CELL_SIZE);
+  height = Math.floor((window.innerHeight) / CELL_SIZE);
   universe = Universe.new(width, height);
 
   canvas.height = (CELL_SIZE + 1) * height + 1;
