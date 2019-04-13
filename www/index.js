@@ -8,22 +8,23 @@ const DEAD_COLOR = "#25283D";
 
 var universe;
 var canvas = document.getElementById('game-of-life-canvas');
-var ctx;
+var ctx = canvas.getContext('2d');
 var counter = 0;
 var width;
 var height;
 
 //set up canvas, randomized universe
 function init(){
-  width = Math.floor((window.innerWidth) / CELL_SIZE);
-  height = Math.floor((window.innerHeight) / CELL_SIZE);
+  width = Math.floor(window.innerWidth / CELL_SIZE);
+  height = Math.floor(window.innerHeight / CELL_SIZE);
+  canvas.width = width * CELL_SIZE;
+  canvas.height = height * CELL_SIZE;
+  canvas.style.left = (window.innerWidth % CELL_SIZE) / 2
+  canvas.style.top = (window.innerHeight % CELL_SIZE) / 2
   universe = Universe.new(width, height);
-
-  canvas.height = (CELL_SIZE + 1) * height + 1;
-  canvas.width = (CELL_SIZE + 1) * width + 1;
-  ctx = canvas.getContext('2d');
-  counter = 0;
 }
+
+
 init();
 
 const fps = new class {

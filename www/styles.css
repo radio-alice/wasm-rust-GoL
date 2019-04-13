@@ -12,6 +12,9 @@ main {
   background-color: #25283D;
   overflow: hidden;
 }
+canvas {
+  position: absolute;
+}
 .controls {
   position: fixed;
   bottom: 20px;
