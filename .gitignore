@@ -5,5 +5,5 @@ bin/
 pkg/
 wasm-pack.log
 .DS_Store
-node_modules
-dist
+www/node_modules
+www/dist
